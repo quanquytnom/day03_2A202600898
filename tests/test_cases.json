@@ -1,0 +1,38 @@
+[
+  {
+    "id": "S1",
+    "type": "simple",
+    "query": "Đà Nẵng có gì đẹp để tham quan?",
+    "expect_agent_tools": false
+  },
+  {
+    "id": "S2",
+    "type": "simple",
+    "query": "Thời tiết Đà Lạt tháng 6 thường thế nào?",
+    "expect_agent_tools": false
+  },
+  {
+    "id": "M1",
+    "type": "multi_step",
+    "query": "Tôi muốn đi Đà Nẵng 3 ngày 2 đêm, ngân sách 5 triệu/người, đi cùng gia đình, thích biển và ăn hải sản. Hãy lên lịch trình tối ưu.",
+    "expect_agent_tools": true
+  },
+  {
+    "id": "M2",
+    "type": "multi_step",
+    "query": "Lên kế hoạch Đà Lạt 3 ngày, ngân sách 4 triệu, đi với bạn bè, thích chụp ảnh. Ước chi phí và gợi ý lịch trình.",
+    "expect_agent_tools": true
+  },
+  {
+    "id": "M3",
+    "type": "multi_step",
+    "query": "Đi Phú Quốc 4 ngày 3 đêm, 2 người, ngân sách 8 triệu tổng. Có phù hợp không?",
+    "expect_agent_tools": true
+  },
+  {
+    "id": "H1",
+    "type": "hard",
+    "query": "Đà Nẵng 2 ngày ngân sách 500 nghìn cho 4 người — lịch trình đầy đủ.",
+    "expect_agent_tools": true
+  }
+]

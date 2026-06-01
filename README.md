@@ -16,7 +16,49 @@ pip install -r requirements.txt
 ```
 
 ### 3. Directory Structure
-- `src/tools/`: Extension point for your custom tools.
+- `src/tools/live_clients.py`: **Keyless live-data layer** (Open-Meteo / OpenStreetMap Overpass / OSRM)
+- `src/tools/travel_tools.py`: TripWise travel tools — **gọi API thật + fallback mock**
+- `chatbot.py`: Baseline chatbot (no tools)
+- `tripwise_agent.py`: ReAct agent CLI (v1 / v2)
+- `scripts/check_live_tools.py`: **Kiểm chứng dữ liệu thật (không cần LLM)**
+- `scripts/run_eval.py`: Compare chatbot vs agent
+- `scripts/parse_logs.py`: **Bảng so sánh telemetry (đọc `logs/runs.jsonl`)**
+- `report/group_report/GROUP_REPORT_TRIPWISE.md`: Group submission template (filled)
+
+> ⚠️ **Security**: bản gốc lỡ commit `OPENAI_API_KEY` thật trong `.env`/`.env.example`.
+> Hãy **rotate (thu hồi) key đó ngay** trên dashboard nhà cung cấp; `.env.example` nay chỉ còn placeholder.
+> Không bao giờ commit `.env` thật (kiểm tra `.gitignore`).
+
+### 3.1. Dữ liệu thật (realtime) & fallback
+Các tool giờ "chọc ra ngoài" lấy dữ liệu thật **miễn phí, không cần key**:
+- Thời tiết & rủi ro mưa → **Open-Meteo**
+- Địa điểm / quán ăn (POI) → **OpenStreetMap Overpass**
+- Thời gian di chuyển → **OSRM**
+
+Mỗi tool tự **fallback về mock** khi offline/lỗi (gắn nhãn `data_source = live | cache | mock`).
+Tắt gọi mạng để chạy hoàn toàn offline: đặt `USE_LIVE_TOOLS=false` trong `.env`.
+Kiểm chứng nhanh không cần LLM:
+```bash
+python scripts/check_live_tools.py "Đà Nẵng"
+```
+
+### 4. TripWise Quick Start (Mimo / OpenAI)
+
+**Mimo (OpenAI-compatible):**
+```bash
+cp .env.example .env   # điền MIMO_API_KEY (tp-...)
+# DEFAULT_PROVIDER=mimo  MIMO_BASE_URL=https://token-plan-sgp.xiaomimimo.com/v1
+python scripts/smoke_test.py
+python tripwise_agent.py --v2
+```
+
+**OpenAI:** set `DEFAULT_PROVIDER=openai` and `OPENAI_API_KEY=sk-...`
+
+```bash
+pytest tests/test_travel_tools.py -q          # offline, no API
+python chatbot.py                           # baseline
+python scripts/run_eval.py --limit 2        # evaluation
+```
 
 ## 🏠 Running with Local Models (CPU)
 

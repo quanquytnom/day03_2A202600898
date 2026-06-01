@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "results": [
+    {
+      "id": "S1",
+      "type": "simple",
+      "query": "Đà Nẵng có gì đẹp để tham quan?",
+      "chatbot_answer": "Đà Nẵng là một thành phố tuyệt vời với nhiều điểm tham quan hấp dẫn mà bạn không nên bỏ qua:\n\n1. **Bà Nà Hills**: Nổi tiếng với cầu vàng giữa mây trời tuyệt đẹp và kiến trúc kiểu Pháp.\n2. **Bãi biển Mỹ Khê**: Một trong những bãi biển đẹp nhất Việt Nam với cát trắng mịn và nước biển trong xanh.\n3. **Ngũ Hành Sơn**: Gồm năm ngọn núi đá vôi nằm gần biển, có các hang động và chùa chiền đẹp mắt.\n4. **Cầu Rồng**: Cây cầu có thiết kế hình rồng độc đáo, có thể phun lửa và nước vào cuối tuần.\n5. **Bảo tàng Điêu khắc Chăm**: Nơi trưng bày bộ sưu tập lớn nhất thế giới về nghệ thuật Chăm.\n6. **Chợ Hàn**: Khu chợ sầm uất, nơi bạn có thể mua sắm các loại quà lưu niệm và đặc sản địa phương.\n7. **Đèo Hải Vân**: Một trong những cung đường đèo đẹp nhất với góc nhìn toàn cảnh biển và núi.\n\nNgoài ra, đừng quên thưởng thức ẩm thực địa phương với những món ngon như bún chả cá, mỳ Quảng và bánh tráng cuốn thịt heo. Chúc bạn có một chuyến đi thú vị!",
+      "chatbot_ok": true,
+      "chatbot_ms": 4801,
+      "agent_answer": "Ở Đà Nẵng, du khách có thể tham quan nhiều địa điểm đẹp như Làng chài và đội tàu, Cầu Tiên Sơn, Cầu Trần Thị Lý, Cầu Thuận Phước, Cầu Nguyễn Văn Trỗi, Cây đa Đò Xu, Cầu sông Hàn, và Chợ đêm Helio.",
+      "agent_ok": true,
+      "agent_ms": 26322
+    }
+  ]
+}
